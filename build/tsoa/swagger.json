@@ -1,0 +1,656 @@
+{
+    "components": {
+        "examples": {},
+        "headers": {},
+        "parameters": {},
+        "requestBodies": {},
+        "responses": {},
+        "schemas": {
+            "IPayment": {
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "cardNumber": {
+                        "type": "string"
+                    },
+                    "userID": {
+                        "type": "string"
+                    },
+                    "cvv": {
+                        "type": "string"
+                    },
+                    "placeHolderName": {
+                        "type": "string"
+                    },
+                    "receiver": {
+                        "type": "string"
+                    },
+                    "expirationDate": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "id",
+                    "cardNumber",
+                    "cvv",
+                    "placeHolderName",
+                    "receiver",
+                    "expirationDate"
+                ],
+                "type": "object",
+                "additionalProperties": false
+            },
+            "IUser": {
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "paymentIDs": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "firstName": {
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "admin",
+                            "user"
+                        ]
+                    },
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "location": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "id",
+                    "email",
+                    "firstName",
+                    "lastName",
+                    "type",
+                    "phoneNumber",
+                    "location"
+                ],
+                "type": "object",
+                "additionalProperties": false
+            }
+        },
+        "securitySchemes": {}
+    },
+    "info": {
+        "title": ""
+    },
+    "openapi": "3.0.0",
+    "paths": {
+        "/api/certification/get-all": {
+            "get": {
+                "operationId": "GetAllCertifications",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Certification"
+                ],
+                "security": [],
+                "parameters": []
+            }
+        },
+        "/api/certification/create": {
+            "post": {
+                "operationId": "CreateCertification",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Certification"
+                ],
+                "security": [],
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/certification/delete/{id}": {
+            "delete": {
+                "operationId": "DeleteCertification",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Certification"
+                ],
+                "security": [],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/api/course/get-all": {
+            "get": {
+                "operationId": "GetAllCourses",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Course"
+                ],
+                "security": [],
+                "parameters": []
+            }
+        },
+        "/api/course/create": {
+            "post": {
+                "operationId": "CreateCourse",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Course"
+                ],
+                "security": [],
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/course/update/{id}": {
+            "put": {
+                "operationId": "UpdateCourse",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Course"
+                ],
+                "security": [],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/course/delete/{id}": {
+            "delete": {
+                "operationId": "DeleteCourse",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Course"
+                ],
+                "security": [],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/api/createData/create": {
+            "post": {
+                "operationId": "CreateUser",
+                "responses": {
+                    "204": {
+                        "description": "No content"
+                    }
+                },
+                "tags": [
+                    "Create Data"
+                ],
+                "security": [],
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "file": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "required": [
+                                    "file"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/payment/get-all": {
+            "get": {
+                "operationId": "GetAllPayments",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Payment"
+                ],
+                "security": [],
+                "parameters": []
+            }
+        },
+        "/api/payment/buy-course/{paymentId}/{courseId}": {
+            "get": {
+                "operationId": "BuyCourse",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Payment"
+                ],
+                "security": [],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "paymentId",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "courseId",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/api/payment/create": {
+            "post": {
+                "operationId": "CreatePayment",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Payment"
+                ],
+                "security": [],
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/IPayment"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/payment/update/{id}": {
+            "put": {
+                "operationId": "UpdatePayment",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Payment"
+                ],
+                "security": [],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/IPayment"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/payment/delete/{id}": {
+            "delete": {
+                "operationId": "DeletePayment",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Payment"
+                ],
+                "security": [],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/api/user/get-all": {
+            "get": {
+                "operationId": "GetAllUser",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "User"
+                ],
+                "security": [],
+                "parameters": []
+            }
+        },
+        "/api/user/create": {
+            "post": {
+                "operationId": "CreateUser",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "User"
+                ],
+                "security": [],
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/IUser"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/user/update/{id}": {
+            "put": {
+                "operationId": "UpdateUser",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "User"
+                ],
+                "security": [],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/IUser"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/user/delete/{id}": {
+            "delete": {
+                "operationId": "DeleteUser",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "User"
+                ],
+                "security": [],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/api/server-status": {
+            "get": {
+                "operationId": "GetServerStatus",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "serverTime": {
+                                            "type": "string"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "serverTime",
+                                        "status"
+                                    ],
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Server Status"
+                ],
+                "security": [],
+                "parameters": []
+            }
+        },
+        "/api/server-status/routes": {
+            "get": {
+                "operationId": "GetServerRoutes",
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Server Status"
+                ],
+                "security": [],
+                "parameters": []
+            }
+        }
+    },
+    "servers": [
+        {
+            "url": "/"
+        }
+    ]
+}

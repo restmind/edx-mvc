@@ -1,0 +1,1 @@
+node generator.js "email,first,last,pick(admin|user),phone,city,natural(10000000),|,ccnumber,digit(3),name,name,date(2),natural(10000000),|,natural(10000000), date(2),pick(excelent|good|satisfying|could be better|polino),|,natural(10000000),name, dollar, bool, word" 10 out1.csv
